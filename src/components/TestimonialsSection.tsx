@@ -1,4 +1,6 @@
 import { Star } from "lucide-react";
+import resultado1 from "@/assets/resultado-1.jpeg";
+import resultado2 from "@/assets/resultado-2.jpeg";
 
 const testimonials = [
   {
@@ -30,9 +32,28 @@ const TestimonialsSection = () => (
         Mulheres reais. Resultados reais.
       </h2>
 
+      {/* Antes e Depois */}
+      <div className="mb-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+        {[resultado1, resultado2].map((img, i) => (
+          <div key={i} className="relative overflow-hidden rounded-2xl border-2 border-primary/30 shadow-lg">
+            <img
+              src={img}
+              alt={`Resultado KERA HAIR ${i + 1}`}
+              className="w-full h-auto object-cover"
+              loading="lazy"
+            />
+            <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-primary/80 to-transparent p-4">
+              <p className="text-sm font-bold text-primary-foreground text-center">
+                ✨ Resultado real com KERA HAIR
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
       <div className="grid gap-6 md:grid-cols-3">
         {testimonials.map((t) => (
-          <div key={t.name} className="rounded-xl border border-border bg-background p-6 shadow-sm">
+          <div key={t.name} className="rounded-xl border border-primary/20 bg-background p-6 shadow-sm hover:shadow-md transition-shadow">
             <Stars />
             <blockquote className="mt-4 text-foreground leading-relaxed italic">
               "{t.text}"

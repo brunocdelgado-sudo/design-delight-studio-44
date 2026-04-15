@@ -10,7 +10,7 @@ const symptoms = [
 ];
 
 const PainSection = () => (
-  <section className="py-10 px-4 bg-card">
+  <section className="py-10 px-4 bg-gradient-to-br from-primary/5 via-card to-accent/5">
     <div className="mx-auto max-w-3xl">
       <h2 className="mb-10 text-center text-2xl md:text-4xl font-bold text-foreground">
         Com qual desses sinais você mais se identifica?
@@ -18,7 +18,7 @@ const PainSection = () => (
 
       <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {symptoms.map((s, i) => (
-          <li key={i} className="flex items-start gap-3 rounded-lg border border-border bg-background p-4">
+          <li key={i} className="flex items-start gap-3 rounded-lg border border-primary/20 bg-background p-4 shadow-sm">
             <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
             <span className="text-foreground">{s}</span>
           </li>
@@ -27,7 +27,7 @@ const PainSection = () => (
 
       <p className="mt-10 text-center text-lg font-semibold text-foreground">
         Se você se reconheceu em qualquer um desses sinais...{" "}
-        <span className="rounded bg-accent/30 px-2 py-0.5 text-accent-foreground font-bold">
+        <span className="rounded bg-primary/20 px-2 py-0.5 text-primary font-bold">
           a solução está logo abaixo.
         </span>
       </p>

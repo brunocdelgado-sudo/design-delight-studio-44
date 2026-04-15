@@ -3,7 +3,7 @@ import { ShieldCheck, Truck, CheckCircle, AlertTriangle } from "lucide-react";
 const CTA_LINK = "https://payt.site/VqClknZ";
 
 const HeroSection = () => (
-  <section className="relative overflow-hidden py-16 px-4 md:py-24">
+  <section className="relative overflow-hidden pt-16 pb-10 px-4 md:pt-24 md:pb-14 bg-gradient-to-b from-background via-background to-primary/5">
     <div className="mx-auto max-w-3xl text-center">
       <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-yellow-500 px-4 py-2 text-sm font-semibold text-white shadow-md">
         <AlertTriangle className="h-4 w-4" />

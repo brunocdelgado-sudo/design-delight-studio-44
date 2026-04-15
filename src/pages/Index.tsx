@@ -1,16 +1,50 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useEffect, useRef } from "react";
+import HeroSection from "@/components/HeroSection";
+import PainSection from "@/components/PainSection";
+import OfferSection from "@/components/OfferSection";
+import ScienceSection from "@/components/ScienceSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import FAQSection from "@/components/FAQSection";
+import FinalCTASection from "@/components/FinalCTASection";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const AnimatedSection = ({ children }: { children: React.ReactNode }) => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.classList.add("animate-fade-in-up");
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div ref={ref} className="opacity-0">
+      {children}
     </div>
   );
 };
 
-const Index = PlaceholderIndex;
+const Index = () => (
+  <div className="min-h-screen overflow-x-hidden">
+    <HeroSection />
+    <AnimatedSection><PainSection /></AnimatedSection>
+    <AnimatedSection><OfferSection /></AnimatedSection>
+    <AnimatedSection><ScienceSection /></AnimatedSection>
+    <AnimatedSection><TestimonialsSection /></AnimatedSection>
+    <AnimatedSection><FAQSection /></AnimatedSection>
+    <AnimatedSection><FinalCTASection /></AnimatedSection>
+  </div>
+);
 
 export default Index;

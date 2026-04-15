@@ -1,0 +1,48 @@
+import { Star } from "lucide-react";
+
+const testimonials = [
+  {
+    name: "Juliana R.",
+    text: "Já tinha tentado de tudo. Quando comecei o KERA HAIR, na terceira semana já notei a diferença na escova — caía muito menos. Hoje tenho meu cabelo de volta. Não acredito que demorei tanto para encontrar isso.",
+  },
+  {
+    name: "Marcela S.",
+    text: "Gastei muito dinheiro com shampoos caros e suplementos genéricos. Com o KERA HAIR foi completamente diferente. O fio ficou mais grosso, o couro cabeludo parou de coçar e a queda diminuiu de um jeito que eu nunca tinha visto antes.",
+  },
+  {
+    name: "Maria Luísa P.",
+    text: "Estava com vergonha de aparecer em fotos. Depois de 6 semanas usando o KERA HAIR, as pessoas começaram a comentar o quanto meu cabelo estava bonito. Esse produto mudou minha autoestima.",
+  },
+];
+
+const Stars = () => (
+  <div className="flex gap-0.5 text-accent">
+    {[...Array(5)].map((_, i) => (
+      <Star key={i} className="h-4 w-4" fill="hsl(var(--accent))" />
+    ))}
+  </div>
+);
+
+const TestimonialsSection = () => (
+  <section className="py-16 px-4 bg-card">
+    <div className="mx-auto max-w-4xl">
+      <h2 className="mb-10 text-center text-2xl md:text-4xl font-bold text-foreground">
+        Mulheres reais. Resultados reais.
+      </h2>
+
+      <div className="grid gap-6 md:grid-cols-3">
+        {testimonials.map((t) => (
+          <div key={t.name} className="rounded-xl border border-border bg-background p-6 shadow-sm">
+            <Stars />
+            <blockquote className="mt-4 text-foreground leading-relaxed italic">
+              "{t.text}"
+            </blockquote>
+            <p className="mt-4 font-semibold text-primary">— {t.name}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+export default TestimonialsSection;

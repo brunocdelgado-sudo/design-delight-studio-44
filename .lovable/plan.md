@@ -1,21 +1,32 @@
 
 
-## Ajustes visuais na LP KERA HAIR
+## Correções: CTAs verdes + mais cor + imagens de resultado
 
-### 1. HeroSection — Badge "ATENÇÃO" em amarelo
-- Trocar `bg-primary/10 text-primary` por fundo amarelo/dourado forte (`bg-yellow-500 text-white`) no badge "ATENÇÃO"
+### Problema principal
+A cor `cta` está definida nas CSS variables (`--cta: 142 71% 45%`) mas **nao esta mapeada no tailwind.config.ts**, então `bg-cta` e `text-cta-foreground` não funcionam — os botões ficam sem cor.
 
-### 2. HeroSection — Frase "Este segredo..." com fundo destacado
-- Adicionar fundo colorido (roxo primário com texto branco ou amarelo com texto escuro) na frase subtítulo, com padding e border-radius
+### O que será feito
 
-### 3. CTAs em verde forte
-- Já estão usando `bg-cta` (verde). Verificar se todos os CTAs da página (OfferSection, FinalCTASection) também usam verde forte. Garantir consistência.
+**1. Corrigir `tailwind.config.ts`** — Adicionar `cta` ao mapeamento de cores:
+```ts
+cta: {
+  DEFAULT: "hsl(var(--cta))",
+  foreground: "hsl(var(--cta-foreground))",
+},
+```
 
-### 4. PainSection — Layout em grid 2 colunas
-- Trocar `space-y-4` (lista vertical) por `grid grid-cols-1 md:grid-cols-2 gap-4` para distribuir os 6 itens lado a lado em desktop, tornando a seção mais compacta
-- Reduzir padding vertical da seção (`py-16` → `py-10`)
+**2. Copiar as imagens de antes/depois para o projeto** — As 2 fotos enviadas serão adicionadas em `src/assets/` para uso na seção de depoimentos como prova visual de resultado.
+
+**3. Adicionar mais vida/cor à página**:
+- Seção de depoimentos: adicionar as imagens como um bloco "Antes e Depois" visual
+- PainSection: adicionar fundo com gradiente leve roxo para quebrar a monotonia bege
+- OfferSection: reforçar as bordas dos cards com cor e adicionar gradiente de fundo
+- Badges de urgência com cores mais vibrantes
 
 ### Arquivos editados
-- `src/components/HeroSection.tsx` — badge amarelo + fundo na frase
-- `src/components/PainSection.tsx` — layout grid 2 colunas
+- `tailwind.config.ts` — mapear cor `cta`
+- `src/components/TestimonialsSection.tsx` — adicionar bloco antes/depois com as imagens
+- `src/components/PainSection.tsx` — fundo com gradiente
+- `src/components/OfferSection.tsx` — mais cor nos cards
+- Copiar 2 imagens para `src/assets/`
 

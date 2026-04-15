@@ -1,10 +1,15 @@
 
 
-## Remover label das imagens de antes/depois
+## Atualizar textos da faixa roxa de transição
 
-### O que será feito
-Remover o overlay com o texto "✨ Resultado real com KERA HAIR" das imagens de antes/depois na seção de depoimentos, deixando apenas as imagens limpas com bordas para que o usuário subentenda o antes/depois.
+### Mudanças solicitadas
+
+Alterar os três textos no `TransitionBanner` (linhas 14-16) para:
+
+1. **"97% de satisfação"** (primeiro)
+2. **"+5.000 mulheres atendidas"** (segundo - mudou de +50.000 para +5.000)
+3. **"5.0 de avaliação"** (terceiro - mudou de 4.9 para 5.0)
 
 ### Arquivo editado
-- `src/components/TestimonialsSection.tsx` — remover o `<div>` com `absolute bottom-0` (linhas 45-49) que contém a label, mantendo apenas a `<img>` dentro do container
+- `src/pages/Index.tsx` — atualizar as três linhas dentro do componente `TransitionBanner`
 

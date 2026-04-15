@@ -1,15 +1,23 @@
 
 
-## Atualizar textos da faixa roxa de transição
+## Reverter ordem: PainSection antes da OfferSection
 
-### Mudanças solicitadas
+### Situação atual
+**Ordem atual no Index.tsx (linhas 53-54):**
+1. HeroSection
+2. TransitionBanner
+3. **OfferSection** (preços - seção 2)
+4. **PainSection** (dor - seção 3)
 
-Alterar os três textos no `TransitionBanner` (linhas 14-16) para:
+### O que será feito
+Trocar as posições das linhas 53 e 54 para voltar à ordem anterior, onde a seção de dor vem antes dos preços.
 
-1. **"97% de satisfação"** (primeiro)
-2. **"+5.000 mulheres atendidas"** (segundo - mudou de +50.000 para +5.000)
-3. **"5.0 de avaliação"** (terceiro - mudou de 4.9 para 5.0)
+**Nova ordem:**
+1. HeroSection
+2. TransitionBanner
+3. **PainSection** (dor - volta para posição 2)
+4. **OfferSection** (preços - volta para posição 3)
 
 ### Arquivo editado
-- `src/pages/Index.tsx` — atualizar as três linhas dentro do componente `TransitionBanner`
+- `src/pages/Index.tsx` — inverter linhas 53 e 54 (trocar `<AnimatedSection><OfferSection /></AnimatedSection>` com `<AnimatedSection><PainSection /></AnimatedSection>`)
 

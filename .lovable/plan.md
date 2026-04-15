@@ -1,16 +1,10 @@
 
 
-## Melhorar transição entre Hero e Offer
+## Remover label das imagens de antes/depois
 
-### Problema
-A seção Hero e a OfferSection têm fundos muito parecidos (ambas claras/bege), sem separação visual clara — parece que há um espaço vazio entre elas.
+### O que será feito
+Remover o overlay com o texto "✨ Resultado real com KERA HAIR" das imagens de antes/depois na seção de depoimentos, deixando apenas as imagens limpas com bordas para que o usuário subentenda o antes/depois.
 
-### Solução
-1. **Adicionar uma faixa de transição** entre Hero e Offer — uma barra horizontal com fundo roxo/primário contendo uma frase curta de impacto (ex: "Mais de 50.000 mulheres já recuperaram seus fios") com ícones. Isso cria separação visual clara.
-2. **Diferenciar os fundos**: dar ao HeroSection um fundo levemente diferente (gradiente suave) para que a mudança de seção seja perceptível.
-3. **Reduzir o padding inferior do Hero** (`py-16` → `pb-10`) para diminuir o espaço.
-
-### Arquivos editados
-- `src/components/HeroSection.tsx` — reduzir padding inferior, adicionar gradiente de fundo sutil
-- `src/pages/Index.tsx` — adicionar uma faixa/banner de transição entre Hero e OfferSection (componente inline ou novo componente `TransitionBanner`)
+### Arquivo editado
+- `src/components/TestimonialsSection.tsx` — remover o `<div>` com `absolute bottom-0` (linhas 45-49) que contém a label, mantendo apenas a `<img>` dentro do container
 

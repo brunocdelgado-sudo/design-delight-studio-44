@@ -50,8 +50,8 @@ const Index = () => (
   <div className="min-h-screen overflow-x-hidden">
     <HeroSection />
     <TransitionBanner />
-    <AnimatedSection><OfferSection /></AnimatedSection>
     <AnimatedSection><PainSection /></AnimatedSection>
+    <AnimatedSection><OfferSection /></AnimatedSection>
     <AnimatedSection><ScienceSection /></AnimatedSection>
     <AnimatedSection><TestimonialsSection /></AnimatedSection>
     <AnimatedSection><FAQSection /></AnimatedSection>

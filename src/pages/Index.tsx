@@ -38,8 +38,8 @@ const AnimatedSection = ({ children }: { children: React.ReactNode }) => {
 const Index = () => (
   <div className="min-h-screen overflow-x-hidden">
     <HeroSection />
-    <AnimatedSection><PainSection /></AnimatedSection>
     <AnimatedSection><OfferSection /></AnimatedSection>
+    <AnimatedSection><PainSection /></AnimatedSection>
     <AnimatedSection><ScienceSection /></AnimatedSection>
     <AnimatedSection><TestimonialsSection /></AnimatedSection>
     <AnimatedSection><FAQSection /></AnimatedSection>

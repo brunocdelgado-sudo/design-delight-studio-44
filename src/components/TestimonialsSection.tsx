@@ -42,11 +42,6 @@ const TestimonialsSection = () => (
               className="w-full h-auto object-cover"
               loading="lazy"
             />
-            <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-primary/80 to-transparent p-4">
-              <p className="text-sm font-bold text-primary-foreground text-center">
-                ✨ Resultado real com KERA HAIR
-              </p>
-            </div>
           </div>
         ))}
       </div>

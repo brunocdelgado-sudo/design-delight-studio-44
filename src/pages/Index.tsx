@@ -11,9 +11,9 @@ import FinalCTASection from "@/components/FinalCTASection";
 const TransitionBanner = () => (
   <div className="bg-primary py-4 px-4">
     <div className="mx-auto max-w-4xl flex flex-wrap items-center justify-center gap-6 text-sm md:text-base font-semibold text-primary-foreground">
-      <span className="flex items-center gap-2"><Users className="h-5 w-5" /> +50.000 mulheres atendidas</span>
-      <span className="flex items-center gap-2"><Star className="h-5 w-5" /> 4.9 de avaliação</span>
       <span className="flex items-center gap-2"><TrendingUp className="h-5 w-5" /> 97% de satisfação</span>
+      <span className="flex items-center gap-2"><Users className="h-5 w-5" /> +5.000 mulheres atendidas</span>
+      <span className="flex items-center gap-2"><Star className="h-5 w-5" /> 5.0 de avaliação</span>
     </div>
   </div>
 );

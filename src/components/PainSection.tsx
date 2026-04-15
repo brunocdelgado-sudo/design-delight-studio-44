@@ -10,13 +10,13 @@ const symptoms = [
 ];
 
 const PainSection = () => (
-  <section className="py-16 px-4 bg-card">
+  <section className="py-10 px-4 bg-card">
     <div className="mx-auto max-w-3xl">
       <h2 className="mb-10 text-center text-2xl md:text-4xl font-bold text-foreground">
         Com qual desses sinais você mais se identifica?
       </h2>
 
-      <ul className="space-y-4">
+      <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {symptoms.map((s, i) => (
           <li key={i} className="flex items-start gap-3 rounded-lg border border-border bg-background p-4">
             <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" />

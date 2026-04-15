@@ -5,12 +5,12 @@ const CTA_LINK = "https://payt.site/VqClknZ";
 const HeroSection = () => (
   <section className="relative overflow-hidden py-16 px-4 md:py-24">
     <div className="mx-auto max-w-3xl text-center">
-      <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
+      <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-yellow-500 px-4 py-2 text-sm font-semibold text-white shadow-md">
         <AlertTriangle className="h-4 w-4" />
         ATENÇÃO
       </div>
 
-      <p className="mb-4 text-base md:text-lg text-muted-foreground">
+      <p className="mb-4 inline-block rounded-lg bg-primary px-4 py-2 text-base md:text-lg text-white font-medium">
         Este segredo está ajudando milhares de mulheres a recuperar o cabelo — e você ainda não sabe.
       </p>
 

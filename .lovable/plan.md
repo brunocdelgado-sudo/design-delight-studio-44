@@ -1,12 +1,16 @@
 
 
-## Trocar posição: Oferta antes da Dor
+## Melhorar transição entre Hero e Offer
 
-O usuário quer ver os preços mais acima na página. Vou trocar a ordem das seções no `src/pages/Index.tsx`:
+### Problema
+A seção Hero e a OfferSection têm fundos muito parecidos (ambas claras/bege), sem separação visual clara — parece que há um espaço vazio entre elas.
 
-**Antes:** Hero → PainSection → OfferSection → ...
-**Depois:** Hero → OfferSection → PainSection → ...
+### Solução
+1. **Adicionar uma faixa de transição** entre Hero e Offer — uma barra horizontal com fundo roxo/primário contendo uma frase curta de impacto (ex: "Mais de 50.000 mulheres já recuperaram seus fios") com ícones. Isso cria separação visual clara.
+2. **Diferenciar os fundos**: dar ao HeroSection um fundo levemente diferente (gradiente suave) para que a mudança de seção seja perceptível.
+3. **Reduzir o padding inferior do Hero** (`py-16` → `pb-10`) para diminuir o espaço.
 
-### Arquivo editado
-- `src/pages/Index.tsx` — inverter a ordem dos componentes `OfferSection` e `PainSection`
+### Arquivos editados
+- `src/components/HeroSection.tsx` — reduzir padding inferior, adicionar gradiente de fundo sutil
+- `src/pages/Index.tsx` — adicionar uma faixa/banner de transição entre Hero e OfferSection (componente inline ou novo componente `TransitionBanner`)
 

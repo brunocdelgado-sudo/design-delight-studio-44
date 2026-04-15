@@ -40,7 +40,7 @@ const benefits = [
 ];
 
 const OfferSection = () => (
-  <section className="py-16 px-4">
+  <section className="py-16 px-4 bg-gradient-to-b from-background via-primary/5 to-background">
     <div className="mx-auto max-w-5xl text-center">
       <h2 className="mb-2 text-3xl md:text-5xl font-extrabold text-primary">KERA HAIR</h2>
       <p className="mb-8 text-lg text-muted-foreground">
@@ -59,7 +59,7 @@ const OfferSection = () => (
         </ul>
       </div>
 
-      <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-destructive/10 px-4 py-2 text-sm font-bold text-destructive">
+      <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-destructive px-4 py-2 text-sm font-bold text-destructive-foreground shadow-md">
         🚨 FRETE GRÁTIS E PREÇO ESPECIAL POR TEMPO LIMITADO
       </div>
 
@@ -67,14 +67,14 @@ const OfferSection = () => (
         {kits.map((kit) => (
           <div
             key={kit.name}
-            className={`relative flex flex-col rounded-2xl border-2 p-6 transition-shadow ${
+            className={`relative flex flex-col rounded-2xl border-2 p-6 transition-all ${
               kit.featured
-                ? "border-primary bg-primary/5 shadow-xl scale-[1.03]"
-                : "border-border bg-card shadow-md"
+                ? "border-primary bg-gradient-to-b from-primary/10 to-primary/5 shadow-xl scale-[1.03]"
+                : "border-primary/20 bg-card shadow-md hover:shadow-lg"
             }`}
           >
             {kit.featured && (
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-xs font-bold uppercase text-primary-foreground">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-xs font-bold uppercase text-primary-foreground shadow-md">
                 ⭐ Mais Vendido
               </div>
             )}
@@ -84,7 +84,7 @@ const OfferSection = () => (
             <p className="mb-1 text-4xl font-extrabold text-primary">{kit.price}</p>
             <p className="mb-2 text-sm text-muted-foreground">{kit.installment}</p>
             {kit.saving && (
-              <span className="mb-4 inline-block rounded-full bg-accent/20 px-3 py-1 text-xs font-semibold text-accent-foreground">
+              <span className="mb-4 inline-block rounded-full bg-cta/20 px-3 py-1 text-xs font-semibold text-cta">
                 {kit.saving}
               </span>
             )}

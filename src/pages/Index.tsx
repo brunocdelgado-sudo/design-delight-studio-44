@@ -1,6 +1,8 @@
 import { useEffect, useRef } from "react";
 import { Users, Star, TrendingUp } from "lucide-react";
 import HeroSection from "@/components/HeroSection";
+import resultado1 from "@/assets/resultado-1.jpeg";
+import resultado2 from "@/assets/resultado-2.jpeg";
 import PainSection from "@/components/PainSection";
 import OfferSection from "@/components/OfferSection";
 import ScienceSection from "@/components/ScienceSection";
@@ -50,6 +52,19 @@ const Index = () => (
   <div className="min-h-screen overflow-x-hidden">
     <HeroSection />
     <TransitionBanner />
+    {/* Before/After Preview */}
+    <section className="py-10 px-4 bg-background">
+      <div className="mx-auto max-w-2xl">
+        <h3 className="text-center text-lg md:text-xl font-bold text-foreground mb-4">Resultados reais com KERA HAIR</h3>
+        <div className="grid grid-cols-2 gap-4">
+          {[resultado1, resultado2].map((img, i) => (
+            <div key={i} className="overflow-hidden rounded-xl border-2 border-primary/30 shadow-md">
+              <img src={img} alt={`Resultado ${i + 1}`} className="w-full h-40 md:h-52 object-cover" loading="lazy" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
     <AnimatedSection><PainSection /></AnimatedSection>
     <AnimatedSection><OfferSection /></AnimatedSection>
     <AnimatedSection><ScienceSection /></AnimatedSection>

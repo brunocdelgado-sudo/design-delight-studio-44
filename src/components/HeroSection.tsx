@@ -1,6 +1,5 @@
 import { ShieldCheck, Truck, CheckCircle, AlertTriangle } from "lucide-react";
-
-const CTA_LINK = "https://payt.site/VqClknZ";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => (
   <section className="relative overflow-hidden pt-16 pb-10 px-4 md:pt-24 md:pb-14 bg-gradient-to-b from-background via-background to-primary/5">
@@ -23,14 +22,12 @@ const HeroSection = () => (
         Se o seu cabelo continua caindo mesmo depois de tentar vitaminas, shampoos e receitas caseiras, leia esta página até o final — você vai entender por quê.
       </p>
 
-      <a
-        href={CTA_LINK}
-        target="_blank"
-        rel="noopener noreferrer"
+      <Link
+        to="/quiz"
         className="inline-block rounded-full bg-cta px-8 py-4 text-lg font-bold uppercase tracking-wide text-cta-foreground shadow-lg transition-all hover:brightness-110 hover:shadow-xl animate-pulse-slow"
       >
         QUERO RECUPERAR MEU CABELO AGORA
-      </a>
+      </Link>
       <p className="mt-2 text-sm text-muted-foreground">
         Clique aqui e garanta o seu com desconto especial
       </p>

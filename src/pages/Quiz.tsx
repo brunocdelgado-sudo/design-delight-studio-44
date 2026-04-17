@@ -140,18 +140,44 @@ const Quiz = () => {
           {/* Step 3 — Diagnosis */}
           {step === 2 && (
             <div className="animate-fade-in-up" style={{ animationFillMode: "forwards" }}>
-              <div className="mb-6 rounded-2xl border-2 border-primary bg-primary/5 p-6 text-center">
-                <Sparkles className="mx-auto mb-3 h-8 w-8 text-primary" />
-                <h2 className="text-xl md:text-2xl font-bold text-foreground mb-2">
-                  Seu Diagnóstico
-                </h2>
-                <p className="text-muted-foreground">
-                  {diagnosisMessages[selectedDuration]}
-                </p>
-                <div className="mt-3 flex flex-wrap items-center justify-center gap-2 text-sm text-primary font-medium">
-                  {selectedSymptoms.map((s) => (
-                    <span key={s} className="rounded-full bg-primary/10 px-3 py-1">{s}</span>
-                  ))}
+              <div className="relative mb-8 overflow-hidden rounded-3xl bg-gradient-to-br from-primary via-primary to-primary/80 p-[3px] shadow-2xl shadow-primary/40">
+                {/* Glow ring */}
+                <div className="absolute inset-0 animate-pulse-slow bg-gradient-to-r from-primary via-cta to-primary opacity-60 blur-xl" />
+
+                <div className="relative rounded-3xl bg-background p-6 md:p-8 text-center">
+                  <div className="mx-auto mb-4 inline-flex items-center gap-2 rounded-full bg-cta/15 px-4 py-1.5">
+                    <Sparkles className="h-4 w-4 text-cta animate-pulse" />
+                    <span className="text-xs font-bold uppercase tracking-wider text-cta">
+                      Diagnóstico Personalizado
+                    </span>
+                    <Sparkles className="h-4 w-4 text-cta animate-pulse" />
+                  </div>
+
+                  <h2 className="mb-3 bg-gradient-to-r from-primary to-cta bg-clip-text text-2xl md:text-3xl font-extrabold text-transparent">
+                    Resultado Pronto!
+                  </h2>
+
+                  <p className="text-base md:text-lg font-medium text-foreground leading-relaxed">
+                    {diagnosisMessages[selectedDuration]}
+                  </p>
+
+                  {selectedSymptoms.length > 0 && (
+                    <div className="mt-5 border-t border-border/50 pt-4">
+                      <p className="mb-2 text-xs uppercase tracking-wider text-muted-foreground font-semibold">
+                        Sintomas identificados
+                      </p>
+                      <div className="flex flex-wrap items-center justify-center gap-2">
+                        {selectedSymptoms.map((s) => (
+                          <span
+                            key={s}
+                            className="rounded-full bg-primary/10 border border-primary/30 px-3 py-1 text-sm font-semibold text-primary"
+                          >
+                            ✓ {s}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
 

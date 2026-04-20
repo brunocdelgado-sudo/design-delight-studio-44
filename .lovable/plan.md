@@ -1,33 +1,34 @@
 
 
-## Botão flutuante de WhatsApp em todas as páginas
+## Adicionar fotos antes/depois na tela de diagnóstico do Quiz
 
 ### O que será feito
 
-Criar um botão flutuante de WhatsApp fixo no canto inferior direito, visível em todas as páginas do site (Home, Quiz e NotFound).
+Inserir as mesmas imagens de resultado (antes/depois) que aparecem na página inicial, na **tela 3 do quiz** (diagnóstico), logo após a mensagem de diagnóstico e antes da seção "Escolha seu tratamento".
 
-### Detalhes visuais
-- Círculo verde (`#25D366` — verde oficial WhatsApp) com ícone `MessageCircle` da lucide-react (ou SVG do WhatsApp inline)
-- Posição: `fixed bottom-6 right-6`, acima de todo o conteúdo (`z-50`)
-- Sombra suave + leve animação de pulso para chamar atenção
-- Tamanho: ~56px (confortável para toque em mobile)
-- Hover: leve aumento de escala
+### Mudanças técnicas
 
-### Comportamento
-- Ao clicar, abre `https://wa.me/5511999999999?text=Olá!%20Tenho%20interesse%20no%20KERA%20HAIR` em nova aba
-- Número usado: `5511999999999` (placeholder — você troca depois no arquivo do componente)
-- Mensagem pré-preenchida: **"Olá! Tenho interesse no KERA HAIR"**
+**Arquivo:** `src/pages/Quiz.tsx`
 
-### Arquivos
+1. **Importar as imagens** (linha 4-5):
+   ```tsx
+   import resultado1 from "@/assets/resultado-1.jpeg";
+   import resultado2 from "@/assets/resultado-2.jpeg";
+   ```
 
-| Arquivo | Ação |
-|---|---|
-| `src/components/WhatsAppButton.tsx` | **Criar** — componente do botão flutuante com constantes `PHONE_NUMBER` e `MESSAGE` no topo do arquivo para fácil edição |
-| `src/App.tsx` | **Editar** — renderizar `<WhatsAppButton />` uma única vez no nível do app (dentro do `BrowserRouter`), garantindo que apareça em todas as rotas sem duplicação |
+2. **Adicionar seção de imagens** dentro do Step 3 (após o bloco de diagnóstico, antes de `<h3 className="text-lg font-bold...">`):
+   - Grid com 2 colunas mostrando as imagens lado a lado
+   - Título "Resultados reais com KERA HAIR"
+   - Bordas arredondadas e sombra suave
+   - Altura reduzida (~150px) para não ocupar muito espaço vertical
 
-### Onde trocar o número depois
-No topo de `src/components/WhatsAppButton.tsx`:
-```ts
-const PHONE_NUMBER = "5511999999999"; // ← troque aqui
-```
+### Resultado esperado
+
+A tela de diagnóstico terá:
+1. Card de diagnóstico destacado (já existe)
+2. **NOVO:** Fotos antes/depois mostrando resultados reais
+3. Opções de kits (1, 3 e 5 frascos)
+4. Botão CTA final
+
+Isso reforça a prova social logo após o diagnóstico personalizado, aumentando a confiança antes da escolha do tratamento.
 

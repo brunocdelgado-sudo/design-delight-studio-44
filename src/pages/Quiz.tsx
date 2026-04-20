@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { CheckCircle, ArrowRight, ShieldCheck, Truck, Package, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
+import resultado1 from "@/assets/resultado-1.jpeg";
+import resultado2 from "@/assets/resultado-2.jpeg";
 
 const CTA_LINK = "https://payt.site/VqClknZ";
 
@@ -178,6 +180,26 @@ const Quiz = () => {
                       </div>
                     </div>
                   )}
+                </div>
+              </div>
+
+              <div className="mb-8">
+                <h3 className="text-base font-bold text-foreground text-center mb-3">
+                  Resultados reais com KERA HAIR
+                </h3>
+                <div className="grid grid-cols-2 gap-3">
+                  <img
+                    src={resultado1}
+                    alt="Resultado antes e depois 1 com KERA HAIR"
+                    className="h-40 w-full rounded-xl object-cover shadow-md border border-border"
+                    loading="lazy"
+                  />
+                  <img
+                    src={resultado2}
+                    alt="Resultado antes e depois 2 com KERA HAIR"
+                    className="h-40 w-full rounded-xl object-cover shadow-md border border-border"
+                    loading="lazy"
+                  />
                 </div>
               </div>
 
